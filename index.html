@@ -1,0 +1,117 @@
+<html>
+<head>
+
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div id="login-section" class="hidden">
+        <h1>Login</h1>
+        <form onsubmit="return login">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegistration()">Register here</a></p>
+    </div>
+
+
+	<div id="registration-section" class="hidden">
+        <h1>Register</h1>
+
+        <form onsubmit="return register()">
+            <input type="text" id="regUsername" placeholder="Username" required><br>
+            <input type="password" id="regPassword" placeholder="Password" required><br>
+            <button type="submit">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+	<div id="main-section" class="hidden">
+        <h1>Shopping Cart</h1>
+
+	<div class="products">
+        <div class="product">
+            <img src="watch.png"height="100">
+            <h2>watch</h2>
+            <p>Price: $5999</p>
+            <p>DESCRIPTION:
+                Case: 44 mm, Stainless Steel
+                Strap: 22 mm, Interchangeable
+                Strap Material: Stainless Steel
+                Memory: 1 GB RAM, 8GB Storage
+                Display: 3.2 cm AMOLED / 416 x 416 / 328ppi
+                Input: 2 Additional Push Buttons (configurable), Rotating Home Button, Touchscreen, Voice
+                Sound/Actuator: Loudspeaker, Microphone, Vibration
+                Connectivity: Bluetooth 4.2 LE, GPS, NFC, WiFi</p>
+            <button class="add-to-cart" onclick="addToCart('Product 1', 5999)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cycle.png"height="100">
+            <h2>cycle</h2>
+            <p>Price: $12000</p>
+            <p>DESCRIPTION:
+                Type	‎Mountain Bike
+                Age Range (Description)	Youth
+                Brand	Generic
+                Colour	black
+                Wheel Size	26 Inches</p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 12000)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="shoes.png"height="100">
+        <h2>shoes</h2>
+        <p>Price: $3000</p>
+        <p>DESCRIPTION:
+            Sole: Rubber
+            Closure: Lace-Up
+            Fit Type: Regular
+            Shoe Width: Medium
+            Upper Material: Synthetic; Outer Sole: Rubber; Insole: Comfort Insole</p>
+        <button class="add-to-cart" onclick="addToCart('Product 3', 2000)">Add to Cart</button>
+    </div>
+</div>
+<div class="product">
+    <img src="teddy.png"height="100">
+    <h2>teddy bear</h2>
+    <p>Price: $400</p>
+    <p>DESCRIPTION:
+        Brand	Bigstep
+        Animal theme	Bear
+        Theme	Animal
+        Colour	black
+        Material  Polyster</p>
+    <button class="add-to-cart" onclick="addToCart('Product 4', 400)">Add to Cart</button>
+</div>
+</div>
+<div class="product">
+    <img src="bag.png"height="100">
+    <h2>backpack</h2>
+    <p>Price: $1500</p>
+    <p>DESCRIPTION:
+        Outer Material: Polyester, Inner Material: Polyester, Color: Navy Blue and Beige; Anti-sweat fabric on inner-side of shoulder straps
+        Wear Resistant: Wearproof, Water Resistance: waterproofDimensions: 32 cms x 18 cms x 47 cms (LxWxH)
+        Capacity: 26 liters, Weight: 0.534 Kg
+        Number of compartments: 3; Strap Type: Adjustable
+        Age Range Description: Adult; Pocket Description: Utility Pocket; Style Name: Traditional Backpacks; Closure Type: Zipper; Special Features: Back Padding</p>
+    <button class="add-to-cart" onclick="addToCart('Product 5', 1500)">Add to Cart</button>
+</div>
+</div>
+
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="total">0</span></p>
+            <button onclick="checksout()">Checkout</button>
+        </div>
+    </div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
