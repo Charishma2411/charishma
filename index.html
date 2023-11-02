@@ -25,9 +25,7 @@
             <input type="text" id="regUsername" placeholder="Username" required><br>
             <input type="password" id="regPassword" placeholder="Password" required><br>
             <input type="date" id="regDate" placeholder="Date" required><br>
-	<div class="products">
-        <div class="product">
-		  <input type="email" id="regEmail" placeholder="email" required><br>
+            <input type="email" id="regEmail" placeholder="email" required><br>
             <button type="submit">Register</button>
         </form>
 
@@ -35,19 +33,17 @@
     </div>
 	<div id="main-section" class="hidden">
         <h1>Shopping Cart</h1>
+
+	<div class="products">
+        <div class="product">
             <img src="watch.png"height="100">
             <h2>watch</h2>
             <p>Price: $5999</p>
             <p>DESCRIPTION:
                 Case: 44 mm, Stainless Steel
                 Strap: 22 mm, Interchangeable
-                Strap Material: Stainless Steel
-                Memory: 1 GB RAM, 8GB Storage
-                Display: 3.2 cm AMOLED / 416 x 416 / 328ppi
-                Input: 2 Additional Push Buttons (configurable), Rotating Home Button, Touchscreen, Voice
-                Sound/Actuator: Loudspeaker, Microphone, Vibration
-                Connectivity: Bluetooth 4.2 LE, GPS, NFC, WiFi</p>
-            <button class="add-to-cart" onclick="addToCart('Product 1', 5999)">Add to Cart</button>
+                Memory: 1 GB RAM, 8GB Storage</p>
+            <button class="add-to-cart" onclick="addToCart('watch', 5999)">Add to Cart</button>
         </div>
 
         <div class="product">
@@ -57,10 +53,8 @@
             <p>DESCRIPTION:
                 Type	‎Mountain Bike
                 Age Range (Description)	Youth
-                Brand	Generic
-                Colour	black
-                Wheel Size	26 Inches</p>
-            <button class="add-to-cart" onclick="addToCart('Product 2', 12000)">Add to Cart</button>
+                Brand	Generic  </p>
+            <button class="add-to-cart" onclick="addToCart('cycle', 12000)">Add to Cart</button>
         </div>
     </div>
     <div class="product">
@@ -73,7 +67,7 @@
             Fit Type: Regular
             Shoe Width: Medium
             Upper Material: Synthetic; Outer Sole: Rubber; Insole: Comfort Insole</p>
-        <button class="add-to-cart" onclick="addToCart('Product 3', 2000)">Add to Cart</button>
+        <button class="add-to-cart" onclick="addToCart('shoes', 2000)">Add to Cart</button>
     </div>
 </div>
 <div class="product">
@@ -86,7 +80,7 @@
         Theme	Animal
         Colour	black
         Material  Polyster</p>
-    <button class="add-to-cart" onclick="addToCart('Product 4', 400)">Add to Cart</button>
+    <button class="add-to-cart" onclick="addToCart('teddy', 400)">Add to Cart</button>
 </div>
 </div>
 <div class="product">
@@ -95,11 +89,9 @@
     <p>Price: $1500</p>
     <p>DESCRIPTION:
         Outer Material: Polyester, Inner Material: Polyester, Color: Navy Blue and Beige; Anti-sweat fabric on inner-side of shoulder straps
-        Wear Resistant: Wearproof, Water Resistance: waterproofDimensions: 32 cms x 18 cms x 47 cms (LxWxH)
-        Capacity: 26 liters, Weight: 0.534 Kg
-        Number of compartments: 3; Strap Type: Adjustable
-        Age Range Description: Adult; Pocket Description: Utility Pocket; Style Name: Traditional Backpacks; Closure Type: Zipper; Special Features: Back Padding</p>
-    <button class="add-to-cart" onclick="addToCart('Product 5', 1500)">Add to Cart</button>
+        Wear Resistant: Wearproof, Water Resistance: waterproof
+        Number of compartments: 3; Strap Type: Adjustable</p>
+    <button class="add-to-cart" onclick="addToCart('backpack', 1500)">Add to Cart</button>
 </div>
 </div>
 
@@ -111,8 +103,39 @@
         </div>
     </div>
 
+<script>
+	let cartItems = [];
 
-<script src="script.js"></script>
+    function addToCart(product, price) {
+        cartItems.push({product, price});
+        updateCart();
+    }
+    
+    function updateCart() {
+        let cartList = document.getElementById("cart-items");
+        let totalElement = document.getElementById("total");
+        let total = 0;
+    
+        cartList.innerHTML = "";
+        cartItems.forEach(item => {
+            let listItem = document.createElement("li");
+            listItem.innerText = ${item.product} - $${item.price};
+            cartList.appendChild(listItem);
+            total += item.price;
+        });
+    
+        totalElement.innerText = total;
+    }
+    
+    
+    
+    
+    // Add product and cart logic similar to the previous example
+    
+    function checksout() {
+        alert('Thank you for your purchase!');
+    }
+    </script> 
 
 </body>
 </html>
