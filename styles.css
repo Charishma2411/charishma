@@ -11,14 +11,14 @@ body {
 }
 .product{
     display:flex;
-    height: 40%;
+    height: 30%;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(220, 144, 200);
 }
 .products, .cart {
     float: left;
-    width: 50%;
+    width: 45%;
     margin: 0 2.5%;
 }
 
