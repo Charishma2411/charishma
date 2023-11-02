@@ -1,4 +1,4 @@
-<html>
+html>
 <head>
 
     <title>Shopping Cart</title>
@@ -36,7 +36,7 @@
 
 	<div class="products">
         <div class="product">
-            <img src="watch.png"height="100">
+            <img src="watch.png" height="100px">
             <h2>watch</h2>
             <p>Price: $5999</p>
             <p>DESCRIPTION:
@@ -47,16 +47,15 @@
         </div>
 
         <div class="product">
-            <img src="cycle.png"height="100">
+            <img src="cycle.png"height="100px">
             <h2>cycle</h2>
             <p>Price: $12000</p>
             <p>DESCRIPTION:
-                Type	‎Mountain Bike
+                Type :Mountain Bike
                 Age Range (Description)	Youth
                 Brand	Generic  </p>
             <button class="add-to-cart" onclick="addToCart('cycle', 12000)">Add to Cart</button>
         </div>
-    </div>
     <div class="product">
         <img src="shoes.png"height="100">
         <h2>shoes</h2>
@@ -69,7 +68,6 @@
             Upper Material: Synthetic; Outer Sole: Rubber; Insole: Comfort Insole</p>
         <button class="add-to-cart" onclick="addToCart('shoes', 2000)">Add to Cart</button>
     </div>
-</div>
 <div class="product">
     <img src="teddy.png"height="100">
     <h2>teddy bear</h2>
@@ -81,7 +79,6 @@
         Colour	black
         Material  Polyster</p>
     <button class="add-to-cart" onclick="addToCart('teddy', 400)">Add to Cart</button>
-</div>
 </div>
 <div class="product">
     <img src="bag.png"height="100">
@@ -101,41 +98,41 @@
             <p>Total: $<span id="total">0</span></p>
             <button onclick="checksout()">Checkout</button>
         </div>
-    </div>
+
 
 <script>
 	let cartItems = [];
 
-    function addToCart(product, price) {
-        cartItems.push({product, price});
-        updateCart();
-    }
-    
-    function updateCart() {
-        let cartList = document.getElementById("cart-items");
-        let totalElement = document.getElementById("total");
-        let total = 0;
-    
-        cartList.innerHTML = "";
-        cartItems.forEach(item => {
-            let listItem = document.createElement("li");
-            listItem.innerText = ${item.product} - $${item.price};
-            cartList.appendChild(listItem);
-            total += item.price;
-        });
-    
-        totalElement.innerText = total;
-    }
-    
-    
-    
-    
-    // Add product and cart logic similar to the previous example
-    
-    function checksout() {
-        alert('Thank you for your purchase!');
-    }
-    </script> 
+function addToCart(product, price) {
+    cartItems.push({product, price});
+    updateCart();
+}
 
-</body>
-</html>
+function updateCart() {
+    let cartList = document.getElementById("cart-items");
+    let totalElement = document.getElementById("total");
+    let total = 0;
+
+    cartList.innerHTML = "";
+    cartItems.forEach(item => {
+        let listItem = document.createElement("li");
+        listItem.innerText = `${item.product} - $${item.price}`;
+        cartList.appendChild(listItem);
+        total += item.price;
+    });
+
+    totalElement.innerText = total;
+}
+
+
+
+
+// Add product and cart logic similar to the previous example
+
+function checksout() {
+    alert('Thank you for your Purchase')
+}
+</script>
+
+
+</body></html>
